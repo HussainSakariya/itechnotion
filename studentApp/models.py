@@ -7,3 +7,5 @@ class Student(models.Model):
     std=models.IntegerField()
     address=models.TextField(max_length=50)
     mo_number=models.IntegerField()
+
+    

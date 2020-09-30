@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Atm Machine</h1>
+    <table border="4">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>STD</td>
+                <td>DP</td>
+                <td>ADDRESS</td>
+                <td>MOBILE</td>
+                
+                <td><a href="{% url 'insert' %}">Insert</a></td>
+            </tr>
+        </thead>
+        {% for obj in object_list %}
+        <tbody>
+            <tr>
+                <td>{{obj.id}}</td>
+                <td>{{obj.name}}</td>
+                <td>{{obj.std}}</td>
+                <td><img src='{{obj.image.url}}' style="width: 100px; height:100px" /></td>
+                <td>{{obj.address}}</td>
+                <td>{{obj.mo_number}}</td>
+                
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
