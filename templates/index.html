@@ -7,7 +7,7 @@
 </head>
 <body>
     <center>
-    <h1>Atm Machine</h1>
+    <h1>Student Registration</h1>
     <table border="4">
         <thead>
             <tr>
@@ -17,7 +17,7 @@
                 <td>DP</td>
                 <td>ADDRESS</td>
                 <td>MOBILE</td>
-                
+                <td>UPDATE</td>
                 <td><a href="{% url 'insert' %}">Insert</a></td>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
                 <td><img src='{{obj.image.url}}' style="width: 100px; height:100px" /></td>
                 <td>{{obj.address}}</td>
                 <td>{{obj.mo_number}}</td>
-                
+                <td><a href="{% url 'update' obj.id %}">Update</td>
             </tr>
         </tbody>
         {% endfor %}
