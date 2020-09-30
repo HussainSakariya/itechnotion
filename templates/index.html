@@ -12,53 +12,38 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <h1>Student Registration</h1>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-            
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <table class="table">
-                    <thead>
-                        <tr><td colspan="8" style="text-align: center;"><a href="{% url 'insert' %}">Insert Student Record</a></td></tr>
-                        <tr>
-                            <td>ID</td>
-                            <td>NAME</td>
-                            <td>STD</td>
-                            <td>DP</td>
-                            <td>ADDRESS</td>
-                            <td>MOBILE</td>
-                            <td>UPDATE</td>
-                            <td>DELETE</td>
-                        </tr>
-                    </thead>
-                    {% for obj in object_list %}
-                    <tbody>
-                        <tr>
-                            <td>{{obj.id}}</td>
-                            <td>{{obj.name}}</td>
-                            <td>{{obj.std}}</td>
-                            <td><img src='{{obj.image.url}}' style="width: 100px; height:100px" /></td>
-                            <td>{{obj.address}}</td>
-                            <td>{{obj.mo_number}}</td>
-                            <td><a href="{% url 'update' obj.id %}">Update</td>
-                            <td><a href="{% url 'delete' obj.id %}">Delete</td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-
-        
-    </div>
+    <center>
+        <h1>Student Registration</h1>
+        <table class="table">
+            <thead>
+                <tr><td colspan="8" style="text-align: center;"><a href="{% url 'insert' %}">Insert Student Details</a></td></tr>
+                <tr>
+                    <td>ID</td>
+                    <td>NAME</td>
+                    <td>STD</td>
+                    <td>DP</td>
+                    <td>ADDRESS</td>
+                    <td>MOBILE</td>
+                    <td>UPDATE</td>
+                    <td>DELETE</td>
+                </tr>
+            </thead>
+            {% for obj in object_list %}
+            <tbody>
+                <tr>
+                    <td>{{obj.id}}</td>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.std}}</td>
+                    <td><img src='{{obj.image.url}}' style="width: 100px; height:100px" /></td>
+                    <td>{{obj.address}}</td>
+                    <td>{{obj.mo_number}}</td>
+                    <td><a href="{% url 'update' obj.id %}">Update</td>
+                    <td><a href="{% url 'delete' obj.id %}">Delete</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </center>
 </body>
 
 </html>
