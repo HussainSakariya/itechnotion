@@ -15,6 +15,10 @@ class InsertData(CreateView):
     form_class=StudentForm
     success_url=reverse_lazy("index")
 
+class DeleteData(DeleteView):
+    template_name="delete.html"
+    model=Student
+    success_url=reverse_lazy("index")
 
 class UpdateData(UpdateView):
     template_name='update.html'
